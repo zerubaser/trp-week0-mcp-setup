@@ -1,7 +1,7 @@
 # TRP Week 0 — MCP Setup & Agent Rules Submission
 
 This repository contains my submission for **TRP Week 0 (MCP Setup Challenge)**.  
-It demonstrates MCP configuration, AI agent rule design, experimentation, and verification using a realistic backend project.
+It demonstrates MCP configuration, AI agent rule design, experimentation, verification, and documentation using a realistic backend project.
 
 ---
 
@@ -19,72 +19,92 @@ All work was done in **VS Code** with MCP enabled and active during experimentat
 
 ## Repository Structure
 
+```text
 .
 ├── .vscode/
-│ └── mcp.json # Tenx MCP server configuration
+│   └── mcp.json                  # Tenx MCP server configuration
 ├── .github/
-│ └── copilot-instructions.md # Final Copilot agent rules
+│   └── copilot-instructions.md   # Final Copilot agent rules
 ├── setup/
-│ └── mcp-setup.md # Task 1: MCP setup log
+│   └── mcp-setup.md              # Task 1: MCP setup log
 ├── report/
-│ └── agent-rules-report.md # Task 2 & 3: Experiments, results, insights
+│   └── agent-rules-report.md     # Task 2 & 3: Experiments, results, insights
 ├── src/
-│ ├── app.ts
-│ ├── index.ts
-│ ├── middleware/
-│ ├── routes/
-│ ├── services/
-│ ├── db/
-│ └── utils/
+│   ├── app.ts
+│   ├── index.ts
+│   ├── middleware/
+│   ├── routes/
+│   ├── services/
+│   ├── db/
+│   └── utils/
 ├── prisma/
-│ ├── schema.prisma
-│ └── migrations/
+│   ├── schema.prisma
+│   └── migrations/
 ├── tsconfig.json
-└── package.json
+├── package.json
+└── README.md
+Tasks Completed
+Task 1 — MCP Setup
+Configured Tenx MCP server in VS Code
 
+Completed GitHub authentication
 
----
+Verified MCP tools availability in Copilot Agent mode
 
-## Tasks Completed
+MCP connection remained active throughout the work
 
-### Task 1 — MCP Setup
-- Configured Tenx MCP server in VS Code
-- Completed GitHub authentication
-- Verified MCP tools availability in Copilot Agent mode
-- MCP connection remained active throughout the work
+📄 Details: setup/mcp-setup.md
 
-📄 Details: `setup/mcp-setup.md`
+Task 2 — Research & Configure
+Designed and refined Copilot agent rules
 
----
+Tested agent behavior against:
 
-### Task 2 — Research & Configure
-- Designed and refined Copilot agent rules
-- Tested agent behavior against ambiguous, multi-file, and verification-heavy tasks
-- Prevented assumption-based coding (e.g., auth strategy, dependencies)
-- Enforced planning, minimal diffs, and verification-first behavior
+Ambiguous requests
 
-📄 Details: `report/agent-rules-report.md`  
-📄 Rules: `.github/copilot-instructions.md`
+Multi-file changes
 
----
+Verification-heavy tasks
 
-### Task 3 — Documentation
-- Documented what worked, what failed, and how issues were resolved
-- Included real verification using API requests
-- Captured insights on how rules changed agent behavior
+Prevented assumption-based coding (e.g., auth strategy, dependencies)
 
-📄 Details: `report/agent-rules-report.md`
+Enforced planning, minimal diffs, and verification-first behavior
 
----
+📄 Details: report/agent-rules-report.md
+📄 Rules file: .github/copilot-instructions.md
 
-## Running the Project Locally (Optional)
+Task 3 — Documentation
+Documented what worked, what didn’t, and how issues were resolved
 
-```bash
+Included real verification using API requests
+
+Captured insights on how rules changed agent behavior
+
+📄 Details: report/agent-rules-report.md
+
+Running the Project Locally (Optional)
 npm install
 npm run dev
-
-## API Usage
-
-### Health check
-```http
+API Usage
+Health check
 GET http://localhost:3000/health
+Expected response:
+
+{ "ok": true }
+Notes API authentication
+All /notes endpoints require the following request header:
+
+x-user-id: <user-id>
+Key Insights
+Explicit agent rules significantly reduce assumption-based behavior
+
+Enforcing planning and file listing prevents scope creep
+
+Requiring verification steps leads to reproducible, trustworthy outputs
+
+Simple, testable rules are more effective than rigid or theoretical enforcement
+
+Submission
+This repository is public and contains all required artifacts for review.
+
+Thank you.
